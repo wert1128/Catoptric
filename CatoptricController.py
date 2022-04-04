@@ -2,9 +2,7 @@ from adafruit_motorkit import MotorKit
 import board
 import sys
 import time
-from adafruit_motorkit import stepper as STEPPER
-
-
+from adafruit_motor import stepper as STEPPER
 
 class CatoptricController():
     HELPER_MESSAGE = 'helper_message, tbd'
