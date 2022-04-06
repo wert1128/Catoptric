@@ -3,6 +3,7 @@ import board
 import sys
 import time
 from adafruit_motor import stepper as STEPPER
+import csv
 
 class CatoptricController():
     HELPER_MESSAGE = 'helper_message, tbd'
@@ -20,10 +21,6 @@ class CatoptricController():
         if argv[1] == "test":
             print("running test")
             self.test()
-            return 
-        if argv[1] == "reset":
-            self.reset()
-            print("reset successfully")
             return
         if argv[1] == "run":
             if not argv[2]:
@@ -36,11 +33,33 @@ class CatoptricController():
         print(self.HELPER_MESSAGE)
     
     def run_csv(self, filename):
+        try:
+            with open(filename, newline='') as csvfile:
+                csv_reader = csv.reader(csvfile, delimiter=',')
+                for row in csv_reader:
+                    _, motor, direction, steps = row
+                    self.move(int(motor), int(direction), int(steps))
+            self.cleanup()
+        except Exception:
+            return False    
         return True
 
-    def reset(self):
-        return
+    def move(self, motor, direction, steps):
+        if motor == 1:
+            stepper = self.kit.stepper1
+        elif motor == 2:
+            stepper = self.kit.stepper2
+        else:
+            return False
+        if direction:
+            stepper_dir = STEPPER.FORWARD
+        else:
+            stepper_dir = STEPPER.BACKWARD
 
+        for _ in range(steps):
+            stepper.onestep(direction=stepper_dir)
+        return True
+        
     def cleanup(self):
         self.kit.stepper1.release()
         self.kit.stepper2.release()
