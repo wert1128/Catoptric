@@ -34,7 +34,7 @@ class CatoptricController():
     
     def run_csv(self, filename):
         try:
-            with open(filename, newline='') as csvfile:
+            with open('csv/'+filename, newline='') as csvfile:
                 csv_reader = csv.reader(csvfile, delimiter=',')
                 for row in csv_reader:
                     _, motor, direction, steps = row
