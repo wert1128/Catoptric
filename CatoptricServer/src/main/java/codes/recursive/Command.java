@@ -3,28 +3,28 @@ import io.micronaut.core.annotation.Introspected;
 
 @Introspected
 public class Command {
-    private Integer motor;
-    private Boolean direction;
-    private Integer steps;
+    private String motor;
+    private String direction;
+    private String steps;
 
-    public Integer getMotor() {
+    public String getMotor() {
         return motor;
     }
-    public void setMotor(Integer motor) {
+    public void setMotor(String motor) {
         this.motor = motor;
     }
 
-    public Integer getSteps() {
+    public String getSteps() {
         return steps;
     }
-    public void setSteps(Integer steps) {
+    public void setSteps(String steps) {
         this.steps = steps;
     }
 
-    public Boolean getDirection() {
+    public String getDirection() {
         return direction;
     }
-    public void setDirection(Boolean direction) {
+    public void setDirection(String direction) {
         this.direction = direction;
     }
 

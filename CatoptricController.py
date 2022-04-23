@@ -22,13 +22,22 @@ class CatoptricController():
             print("running test")
             self.test()
             return
-        if argv[1] == "run":
+        if argv[1] == "run_csv":
             if not argv[2]:
                 print("please enter the name of the csv file to run")
             elif self.run_csv(argv[2]):
                 print("csv ran successfully")
             else:
                 print("csv not found")
+            return
+        if argv[1] == "move":
+            if len(argv) != 5:
+                print("Enter the correct arguments: move $motor $direction $steps")
+                return
+            if self.move(int(argv[2]), int(argv[3]), int(argv[4])):
+                print("moved successfully")
+            else:
+                print("move failed")
             return
         print(self.HELPER_MESSAGE)
     
