@@ -12,7 +12,8 @@ import java.util.Map;
 @Controller("/")
 public class DefaultController {
     public String run_command(String args) throws IOException{
-        Process p = Runtime.getRuntime().exec("python ../CatoptricController.py.py" + args);
+        //Process p = Runtime.getRuntime().exec("python ./CatoptricController.py.py" + args);
+        Process p = Runtime.getRuntime().exec("python ../CatoptricController.py" + args);
         BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
         String ret = in.readLine();
         return ret;
