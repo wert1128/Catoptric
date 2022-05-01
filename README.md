@@ -14,21 +14,24 @@ If your README is long, add a table of contents to make it easy for users to fin
 - [Credits](#credits)
 
 ## Installation
-
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
-Enable I2C in the interface options on raspberry pi
-
-#INSTALL ADAFRUIT MOTORKIT
-sudo pip3 install adafruit-circuitpython-motorkit
+1. Follow STEP 1 in the following link to enable I2C: 
+https://www.raspberrypi-spy.co.uk/2014/11/enabling-the-i2c-interface-on-the-raspberry-pi/
+2. Install Adafruit Motorkit on Raspberry Pi
+    ```md
+    sudo pip3 install adafruit-circuitpython-motorkit
+    ```
+3. Install Java on Raspberry Pi
+    ```md
+    sudo apt update
+    sudo apt install default-jdk
+    ```
 
 ## Usage
-
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
+It should be used with appropriate hardware set up, for detail: see Professor Chamberlain
+To Start the server:
     ```md
-    ![alt text](assets/images/screenshot.png)
+    cd CatoptricServer
+    ./gradlew run
     ```
 
 ## Credits
