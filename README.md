@@ -35,6 +35,6 @@ To Start the server:
     ```
 
 ## Credits
-Mentor: Professor Chamberlain
-Collaborator: Samantha Kodali
-Referenced Code from: Scott Siri
+- Mentor: Professor Chamberlain
+- Collaborator: Samantha Kodali
+- Referenced Code from: Scott Siri
