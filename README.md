@@ -5,9 +5,7 @@ The project runs a REST Server and receives HTTP requests to perform movements o
 
 The project is consisted of two parts, the Python motor control scripts, and the micronaut server. The Python motor control scripts can be found at the root level of the project. The Micronaut server can be found in the directory  /CaptoptricServer.
 
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
