@@ -10,6 +10,7 @@ The project is consisted of two parts, the Python motor control scripts, and the
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
+- [CodeDirectory](#codeDirectory)
 
 ## Installation
 1. Follow STEP 1 in the following link to enable I2C: 
@@ -31,7 +32,18 @@ To Start the server:
     cd CatoptricServer
     ./gradlew run
     ```
-
+    
+## CodeDirectory
+The following files contain the code you should be concerned with:
+1. Python Script that control the motor movement: 
+    ```md
+    CatoptricController.py
+    ```
+2. Micronaut server controller that handles http request and calls Python script:
+    ```md
+    /CatoptricServer/src/main/java/codes/recursive/controller/DefaultController.java
+    ```
+    
 ## Credits
 - Mentor: Professor Chamberlain
 - Collaborator: Samantha Kodali
